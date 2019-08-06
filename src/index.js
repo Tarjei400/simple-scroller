@@ -1,22 +1,8 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
-import styles from './styles.css'
-
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+import { useScrollable, useScroller, ScrollerContext } from './hooks/useScroller';
+import { Scrollable, ScrollToElement } from './components/Scrollable';
+export {
+  useScrollable, useScroller, Scrollable, ScrollToElement, ScrollerContext
+};
+export default {
+  useScrollable, useScroller, Scrollable, ScrollToElement, ScrollerContext
+};
