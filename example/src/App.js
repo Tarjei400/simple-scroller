@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { useScroller, ScrollToElement, Scrollable } from 'react-scroller';
+import { useScroller, ScrollToElement, Scrollable } from 'simple-scroller';
 
 const Anchor = (props) => <a {...props} />
 const Head = ({ children, ...rest}) => <h1 {...rest} > { children } </h1>

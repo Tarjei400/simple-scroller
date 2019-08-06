@@ -9,7 +9,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^1.1.4",
-    "react-scroller": "file:.."
+    "simple-scroller": "file:.."
   },
   "scripts": {
     "start": "react-scripts start",

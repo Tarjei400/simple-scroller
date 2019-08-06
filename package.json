@@ -1,10 +1,11 @@
 {
-  "name": "react-scroller",
+  "name": "simple-scroller",
   "version": "1.0.0",
   "description": "",
   "author": "",
+  "homepage": "https://tarjei400.github.io/react-scroller/",
   "license": "MIT",
-  "repository": "/react-scroller",
+  "repository": "https://github.com/Tarjei400/react-scroller",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -18,8 +19,8 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "predeploy": "cd example && yarn install && yarn run build",
+    "deploy": "gh-pages -d \"example/build\""
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -43,7 +44,7 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-standard": "^3.1.0",
-    "gh-pages": "^1.2.0",
+    "gh-pages": "2.0.1",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-scripts": "^1.1.4",
