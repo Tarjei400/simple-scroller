@@ -14,7 +14,7 @@ npm install --save react-scroller
 
 ## Usage
 
-###Scrollable / useScroller
+### Scrollable / useScroller
 Registers a component one can later of refer from useScroller hook
 to scroll to it at later point programmatically
 useScroll provides interface for scrolling by name reference
@@ -33,7 +33,7 @@ const Example = () => {
   )
 }
 ```
-###ScrollToElement
+### ScrollToElement
 Does the same as Scrollable, moreover it scrolls to element upon render
 ```jsx
 import React, from 'react'
