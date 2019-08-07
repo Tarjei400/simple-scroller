@@ -19,13 +19,19 @@ export const Scrollable = ({ children, name }) => {
  *
  * @param children
  * @param name
+ * @param shouldScroll
  * @returns {*}
  * @constructor
  */
-export const ScrollToElement = ({ children, name }) => {
+export const ScrollToElement = ({ children, name, shouldScroll = true }) => {
   const scrollablesMap = useContext(ScrollerContext)
   const ref = useScrollable(name);
   const { animateScroll } = useScroller(name, ref);
-  useLayoutEffect(animateScroll, scrollablesMap[name]);
+  console.log("Should scroll ", shouldScroll)
+  useLayoutEffect(() => {
+    if (shouldScroll) {
+      animateScroll()
+    }
+  });
   return <div ref={ref}> {children} </div>;
 }
