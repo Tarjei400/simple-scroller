@@ -1,10 +1,9 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { useScroller, ScrollToElement, Scrollable, Link } from 'simple-scroller';
+import { useScroller, ScrollToElement, Scrollable, Link, scrollToTop } from 'simple-scroller';
 
 const Head = ({ children, ...rest}) => <h1 {...rest} > { children } </h1>
 
 export const withScrollToTop = (component) => ({ to, ...rest}) => {
-  const { scrollToTop } = useScroller(to)
   return <div onClick={scrollToTop}><component {...rest} /></div>
 }
 
@@ -22,7 +21,6 @@ export default () => {
     }, 5000)
     return () => {}
   }, [])
-  const ad = useScroller('asd')
   return (
     <Fragment>
       <Link to='test1'> Go to header1 </Link>
@@ -30,6 +28,7 @@ export default () => {
       <Link to='test3'>Go to header3 </Link>
       <Link to='test4'>Go to header4 </Link>
       <Link to='test5'>Go to header5 </Link>
+      <Link to='test6'>Go to header6 </Link>
       <Scrollable name='test1'><Header>Header1</Header></Scrollable>
       <LoremIpsum />
       <Scrollable name='test2'><Header>Header2</Header></Scrollable>
