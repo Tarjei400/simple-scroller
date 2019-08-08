@@ -1,8 +1,8 @@
-import { useScrollable, useScroller, ScrollerContext } from './hooks/useScroller';
-import { Scrollable, ScrollToElement } from './components/Scrollable';
+import { useScrollable, useScroller, ScrollerContext, scrollToTop } from './hooks/useScroller';
+import { Scrollable, ScrollToElement, Link } from './components/Scrollable';
 export {
-  useScrollable, useScroller, Scrollable, ScrollToElement, ScrollerContext
+  useScrollable, useScroller, Scrollable, ScrollToElement, ScrollerContext, Link, scrollToTop
 };
 export default {
-  useScrollable, useScroller, Scrollable, ScrollToElement, ScrollerContext
+  useScrollable, useScroller, Scrollable, ScrollToElement, ScrollerContext, Link, scrollToTop
 };

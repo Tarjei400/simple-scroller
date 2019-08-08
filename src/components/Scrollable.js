@@ -1,5 +1,5 @@
-import { default as React, useLayoutEffect, useContext } from 'react'
-import { ScrollerContext, useScrollable, useScroller } from '../hooks/useScroller'
+import { default as React, useLayoutEffect } from 'react'
+import { useScrollable, useScroller } from '../hooks/useScroller'
 
 /***
  * Registers a reference in scroller context. Later on component name can be used to scroll to it.
@@ -24,14 +24,27 @@ export const Scrollable = ({ children, name }) => {
  * @constructor
  */
 export const ScrollToElement = ({ children, name, shouldScroll = true }) => {
-  const scrollablesMap = useContext(ScrollerContext)
   const ref = useScrollable(name);
   const { animateScroll } = useScroller(name, ref);
-  console.log("Should scroll ", shouldScroll)
   useLayoutEffect(() => {
     if (shouldScroll) {
       animateScroll()
     }
   });
   return <div ref={ref}> {children} </div>;
+}
+
+/***
+ * Wraps children, and animates scroll to element passed in 'to' property
+ *
+ * @param to
+ * @param children
+ * @returns {*}
+ * @constructor
+ */
+export const Link = ({ to, children }) => {
+  const { animateScroll } = useScroller(to);
+  return <div onClick={animateScroll}>
+    {children}
+  </div>
 }

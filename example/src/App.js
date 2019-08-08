@@ -1,21 +1,14 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { useScroller, ScrollToElement, Scrollable } from 'simple-scroller';
+import { useScroller, ScrollToElement, Scrollable, Link } from 'simple-scroller';
 
-const Anchor = (props) => <a {...props} />
 const Head = ({ children, ...rest}) => <h1 {...rest} > { children } </h1>
 
-export const withScrollTo = (component) => ({ to, ...rest}) => {
-  const { animateScroll } = useScroller(to)
-  return <div onClick={animateScroll}><component {...rest} /></div>
-}
 export const withScrollToTop = (component) => ({ to, ...rest}) => {
   const { scrollToTop } = useScroller(to)
   return <div onClick={scrollToTop}><component {...rest} /></div>
 }
 
 const Header = withScrollToTop(Head)
-
-export const Link = withScrollTo(Anchor);
 
 const LoremIpsum = () => (
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce massa turpis, tempor ut justo eu, porta hendrerit eros. Nulla vestibulum, leo eget sollicitudin aliquet, nibh nisl finibus metus, sit amet ornare lectus velit et nulla. Pellentesque nec euismod felis. Sed vestibulum velit justo, quis lacinia ligula auctor at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales efficitur nunc et maximus. Proin facilisis mi quis dui lobortis eleifend. Ut dignissim nisl eu lectus dictum, eget tempus enim eleifend. Suspendisse at nunc ex. Duis vehicula mollis massa suscipit venenatis. Ut commodo eros justo, a finibus metus elementum quis. Quisque pellentesque tortor pellentesque massa accumsan, sit amet cursus nibh auctor. Cras at enim mollis, scelerisque augue ornare, volutpat eros. Cras nec lectus sem. Mauris eu velit viverra, facilisis diam vitae, aliquet augue. Proin suscipit dolor sit amet pretium euismod.</p>
