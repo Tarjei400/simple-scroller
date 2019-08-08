@@ -9,14 +9,12 @@ export const ScrollerContext = createContext({})
  * @param containerId
  */
 export const scrollToTop = ({ containerId } = {}) => {
+  let element = window;
   if (containerId) {
-    const el = document.getElementById(containerId)
-    if (el) {
-      el.scrollIntoView()
-      return
-    }
+    const container = document.getElementById(containerId);
+    element = container || element;
   }
-  window.scroll({ behavior: 'smooth', top: 0, left: 0 })
+  element.scroll({ behavior: 'smooth', top: 0, left: 0 });
 }
 
 /***
