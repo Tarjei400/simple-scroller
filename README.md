@@ -1,7 +1,7 @@
 # simple-scroller
 
 > 
-[![NPM](https://img.shields.io/npm/v/react-scroller.svg)](https://www.npmjs.com/package/react-scroller) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/simple-scroller.svg)](https://www.npmjs.com/package/simple-scroller) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [Example](https://tarjei400.github.io/react-scroller/)
 
 Zero dependency interface for scrolling to react components
