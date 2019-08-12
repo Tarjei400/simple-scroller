@@ -24,7 +24,6 @@ export default () => {
   const [ shouldRender, setShouldRender ] = useState(false)
   useEffect(() => {
     setTimeout(() => {
-      console.log(setShouldRender, shouldRender)
       setShouldRender(true)
     }, 5000)
     return () => {}
