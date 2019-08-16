@@ -11,7 +11,7 @@ import { useScrollable, useScroller } from '../hooks/useScroller'
  */
 export const Scrollable = ({ children, name }) => {
   const ref = useScrollable(name)
-  return <div ref={ref}> {children} </div>
+  return <div ref={ref} name={name}> {children} </div>
 }
 
 /***
@@ -31,7 +31,7 @@ export const ScrollToElement = ({ children, name, shouldScroll = true }) => {
       animateScroll()
     }
   });
-  return <div ref={ref}> {children} </div>;
+  return <div ref={ref} name={name}> {children} </div>;
 }
 
 /***
