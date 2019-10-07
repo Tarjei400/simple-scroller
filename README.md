@@ -45,6 +45,19 @@ const Example = () => {
     <ScrollToElement name="test" />
   )
 }
+
+If for some reason , you need to scroll n px above element,
+pass offset prop to Scrollable/ScrollToElement component
+```jsx
+import React, from 'react'
+
+import { ScrollToElement } from 'simple-scroller'
+
+const Example = () => {
+  return (
+    <ScrollToElement name="test" offset="40"/>
+  )
+}
 ```
 You can prevent scrolling if necesarry by passing shouldScroll boolean property
 

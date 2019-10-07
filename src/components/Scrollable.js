@@ -1,5 +1,15 @@
-import { default as React, useLayoutEffect } from 'react'
+import { default as React, useLayoutEffect, Fragment } from 'react'
 import { useScrollable, useScroller } from '../hooks/useScroller'
+
+const OffsetStyle = (offset) =>({
+  position: 'absolute',
+  opacity: '0',
+  width: '100%',
+  height: '1px',
+  'margin-top': `-${offset}px`,
+  'background-image': 'linear-gradient(120deg, #eaee44, #33d0ff)',
+});
+
 
 /***
  * Registers a reference in scroller context. Later on component name can be used to scroll to it.
@@ -9,9 +19,18 @@ import { useScrollable, useScroller } from '../hooks/useScroller'
  * @returns {*}
  * @constructor
  */
-export const Scrollable = ({ children, name }) => {
-  const ref = useScrollable(name)
-  return <div ref={ref} name={name}> {children} </div>
+export const Scrollable = ({ children, name, offset }) => {
+  const ref = useScrollable(name);
+
+  if(!offset){
+    return <Fragment>
+      <div ref={ref} name={name}> {children} </div>
+    </Fragment>
+  }
+  return <Fragment>
+    <div ref={ref} style={OffsetStyle(offset)}> </div>
+    <div name={name}> {children} </div>
+  </Fragment>
 }
 
 /***
@@ -23,7 +42,7 @@ export const Scrollable = ({ children, name }) => {
  * @returns {*}
  * @constructor
  */
-export const ScrollToElement = ({ children, name, shouldScroll = true }) => {
+export const ScrollToElement = ({ children, name, shouldScroll = true, offset}) => {
   const ref = useScrollable(name);
   const { animateScroll } = useScroller(name, ref);
   useLayoutEffect(() => {
@@ -31,8 +50,18 @@ export const ScrollToElement = ({ children, name, shouldScroll = true }) => {
       animateScroll()
     }
   });
-  return <div ref={ref} name={name}> {children} </div>;
+
+  if(!offset){
+    return <Fragment>
+      <div ref={ref} name={name}> {children} </div>
+    </Fragment>
+  }
+  return <Fragment>
+    <div ref={ref} style={OffsetStyle(offset)}> </div>
+    <div name={name}> {children} </div>
+  </Fragment>
 }
+
 
 /***
  * Wraps children, and animates scroll to element passed in 'to' property
