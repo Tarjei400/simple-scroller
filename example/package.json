@@ -1,6 +1,6 @@
 {
-  "name": "react-scroller-example",
-  "homepage": "https://.github.io/react-scroller",
+  "name": "simple-scroller-example",
+  "homepage": "https://.github.io/simple-scroller",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^1.1.4",
-    "simple-scroller": "^1.1.1"
+    "simple-scroller": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

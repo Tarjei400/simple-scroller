@@ -7030,10 +7030,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
 
-simple-scroller@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/simple-scroller/-/simple-scroller-1.1.1.tgz#eda25ec5cc4dda23fd704198d129a3440233de7b"
-  integrity sha512-MCay8v0Yml8Z+xq0NJyK2P5v4arPjFTTOSp94I/Vks1xSDHTdDLMCRSPyPfXaBskSe71x7NLmJdHEPq7ASn+rQ==
+simple-scroller@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/simple-scroller/-/simple-scroller-2.1.0.tgz#b6534617c41a432378a62b04295277680ce4ea51"
+  integrity sha512-11tAiQsZ5VguLVhogCyT84HbiphdVjf3VenGNAOH/B1bt7Dw2B23fxz75R6yt1l/aOw+S9cdtqU+9I6y4OFbgA==
 
 slash@^1.0.0:
   version "1.0.0"
