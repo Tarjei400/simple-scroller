@@ -1,15 +1,19 @@
 import { default as React, useLayoutEffect, Fragment } from 'react'
 import { useScrollable, useScroller } from '../hooks/useScroller'
 
+/**
+ *
+ * This styling is a workaround to scroll to element with a given offset.
+ * As we can scroll only into DOM elements, this workaround is about adding extra element and put a negative margin on it.
+ *
+ */
 const OffsetStyle = (offset) =>({
   position: 'absolute',
   opacity: '0',
-  width: '100%',
+  width: '1px',
   height: '1px',
-  'margin-top': `-${offset}px`,
-  'background-image': 'linear-gradient(120deg, #eaee44, #33d0ff)',
-});
-
+  marginTop: `-${offset}px`
+})
 
 /***
  * Registers a reference in scroller context. Later on component name can be used to scroll to it.
@@ -49,7 +53,7 @@ export const ScrollToElement = ({ children, name, shouldScroll = true, offset}) 
     if (shouldScroll) {
       animateScroll()
     }
-  });
+  }, []);
 
   if(!offset){
     return <Fragment>

@@ -48,7 +48,7 @@ export const useScroller = (name, ref) => {
     if (cmpRef) {
       cmpRef.current.scrollIntoView(params)
     }
-  }, scrollablesMap[name])
+  }, [scrollablesMap[name]])
 
   return {
     scrollTo: scrollCallbackFactory(),
